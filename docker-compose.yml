@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  taskmanager:
+    restart: always
+    image: taskmanager
+    container_name: taskmanager
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://taskmanager-postgres:5432/taskmanager
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 01041985
+    ports:
+      - 8080:8080
+
+
+  taskmanager-postgres:
+    image: postgres
+    container_name: taskmanager-postgres
+    environment:
+      POSTGRES_DB: taskmanager
+      POSTGRES_PASSWORD: 01041985

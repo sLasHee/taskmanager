@@ -3,6 +3,7 @@ package com.example.taskmanager.controller;
 import com.example.taskmanager.dto.DeveloperDTO;
 import com.example.taskmanager.entity.Developer;
 import com.example.taskmanager.service.DeveloperService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class DeveloperController {
     }
 
     @PostMapping(value = "/createDeveloper")
-    public Developer createDeveloper(@RequestBody DeveloperDTO developerDTO) {
+    public Developer createDeveloper(@Valid @RequestBody DeveloperDTO developerDTO) {
         return developerService.create(developerDTO);
     }
 

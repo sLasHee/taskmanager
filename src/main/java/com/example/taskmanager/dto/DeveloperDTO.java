@@ -1,18 +1,14 @@
-package com.example.taskmanager.entity;
+package com.example.taskmanager.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.UUID;
 
-@Entity
-public class Developer {
+public class DeveloperDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @NotEmpty
     private String nickName;
 
     public UUID getId() {

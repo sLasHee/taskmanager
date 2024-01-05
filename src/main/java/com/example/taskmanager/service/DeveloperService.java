@@ -22,7 +22,7 @@ public class DeveloperService {
         return developerRepository.findAll();
     }
 
-    public Developer create(DeveloperDTO developerDTO) {
+    public Developer createDeveloper(DeveloperDTO developerDTO) {
         Developer developer = new Developer();
         developer.setId(developerDTO.getId());
         developer.setNickName(developerDTO.getNickName());

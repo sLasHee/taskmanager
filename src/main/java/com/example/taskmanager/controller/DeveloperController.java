@@ -24,7 +24,7 @@ public class DeveloperController {
 
     @PostMapping(value = "/createDeveloper")
     public Developer createDeveloper(@Valid @RequestBody DeveloperDTO developerDTO) {
-        return developerService.create(developerDTO);
+        return developerService.createDeveloper(developerDTO);
     }
 
     @DeleteMapping(value = "/deleteDeveloper/{id}")

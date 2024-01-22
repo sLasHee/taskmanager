@@ -1,5 +1,6 @@
 package com.example.taskmanager.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -13,8 +14,9 @@ public class Task {
 
     private String title;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "developer_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DEVELOPER_ID")
+    @JsonIgnoreProperties(value = "hibernateLazyInitializer")
     private Developer developer;
 
     public UUID getId() {
